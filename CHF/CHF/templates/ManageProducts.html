@@ -1,0 +1,37 @@
+<%inherit file="manage.htm" />
+
+	<%block name="listTitle">
+		Products
+	</%block>
+
+ 	<%block name="list">
+		<tr>
+			<td>Colonial Shoes</td>
+		</tr>
+		<tr>
+			<td>Colonial Hat</td>
+		</tr>
+		<tr>
+			<td>Colonial Breeches</td>
+		</tr>
+	</%block>
+
+	<%block name="form">
+		<form action="#" method="POST">
+			<table>
+				<tr>
+					<td> Name <input type="text"/></td><td><a  href="#"><img height="150"src="http://www.fugawee.com/_photoshop/Colonial/Mens/Concord/concor2_small1.jpg"/></a></td>
+				</tr>
+				<tr>
+					<td> Description<br> <textarea rows="4" cols="22"></textarea></td><td> Category <input type="text"/></td>
+				</tr>
+				<tr>
+					<td> Price <input type="text"/></td><td> Owner <input type="text"/></td>
+				</tr>
+			</table>
+			<div class="submitBtns">
+    			<input class="btn btn-primary" value="Update" type="submit"/>
+    			<input class="btn btn-danger" value="Archive" type="submit"style="margin: 10px;"/>
+			</div>
+		</form>
+    </%block>

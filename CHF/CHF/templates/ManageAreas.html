@@ -1,0 +1,39 @@
+<%inherit file="manage.htm" />
+
+<%block name="listTitle">
+    Areas
+</%block>
+
+<%block name="list">
+    <tr>
+        <td>Cobler Area</td>
+    </tr>
+
+    <tr>
+        <td>Treat/Refreshment Stand</td>
+    </tr>
+
+    <tr>
+        <td>Constitution Recitation</td>
+    </tr>
+</%block>
+
+<%block name="form">
+    <form action="#" method="POST">
+        <table>
+            <tr>
+                <td> Area Name <input type="text"/></td><a  href="#"><img height="150"src="http://1.bp.blogspot.com/-Rzi4QHyQ1YY/UmIUpMs6XWI/AAAAAAAAAjQ/go3XOJ7rPoM/s320/IMG_0558.jpg"/></a>
+            </tr>
+            <tr>
+                <td> Area Description <input type="text"/></td>
+            </tr>
+            <tr>
+                <td> Place Number <input type="text"/></td>
+            </tr>
+        </table>
+            <div class="submitBtns">
+                <input class="btn btn-primary" value="Update" type="submit"/>
+                <input class="btn btn-danger" value="Archive" type="submit"style="margin: 10px;"/>
+            </div>
+    </form>
+</%block>

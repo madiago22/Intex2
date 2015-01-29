@@ -1,0 +1,177 @@
+body{
+   background: #fff5df;
+}
+h1,h2,h3,h4,h5{
+    margin-top:0px;
+}
+table{
+    padding:10px;
+    width:100%;
+    border:none;
+}
+tr{
+    padding:15px;
+}
+td{
+    padding:10px;
+}
+a{
+    font-weight: bold;
+    color:white;
+}
+#wrapper{
+    width:75%;
+    height:100%;
+    background:white;
+    margin:auto;
+}
+#title{
+    font-family: "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    color: #d9d9d9;
+    width:80%;
+}
+.loginBtn{
+    text-align:center;
+    display:block;
+    margin:auto;
+    margin-bottom:4px;
+}
+#brBanner{
+    float:right;
+    margin-right:15px;
+    margin-bottom: 5px;
+    text-align:center;
+    font-size:10px;
+}
+#searchBar{
+    float:left;
+    margin:0px 35px;
+}
+#login{
+    float:right;
+}
+.loginBtn:hover{
+    cursor:pointer;
+}
+#banner{
+    background:linear-gradient(#790000, #5e0000);
+    column-span: 2;
+}
+#middle{
+    padding:30px;
+}
+#sidebar{
+    background: #0f0f7b;
+    width:20%;
+    color:white;
+    vertical-align: top;
+    padding:0px;
+    max-width:100px;
+}
+#content{
+    background: #d0d0d0;
+    width:100%;
+}
+#footer{
+    background: #49454e;
+    color: #a8a8a8;
+}
+#footer a:hover{
+    color: #2f2f2f;
+    text-decoration: none;
+}
+
+.navbar {
+    text-align: center;
+    list-style-type: none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    max-width: inherit;
+}
+.navbar li{
+    background: #0f0f7b;
+    padding: 10px 0px;
+    font-size:18px;
+    font-weight:bold;
+    border-bottom: white 1px groove;
+    width:100%
+}
+
+.navbar li:hover{
+    background:blue;
+    cursor:pointer;
+}
+.navbar a:hover{
+    color:white;
+    text-decoration:none;
+}
+.subNav{
+    list-style-type: none;
+    display:none;
+    padding:10px 0px;
+    margin-bottom:-20px;
+}
+.subNav li{
+    background: #1577ff;
+    border:none;
+    width:100%;
+    border-top:1px white solid;
+
+}
+
+.subNav li:hover{
+    background: #0f51ac;
+
+}
+.active{
+    background:linear-gradient(white, #1818c7);
+}
+.footerNav{
+    list-style-type: none;
+    text-align:center;
+}
+.footerNav li{
+    display: inline;
+    padding:3px;
+    border-left: #afafaf 2px solid;
+    font-size:14px;
+}
+.footerNav li:last-child{
+    border-right: #afafaf 2px solid;
+}
+.footerNav a{
+    color: #afafaf;
+}
+
+#loginPage{
+    text-align:center;
+    padding:30px;
+    background:linear-gradient(white, #cdcdcd);
+    border-radius: 7px;
+    border:1px darkgray solid;
+    width:30%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin-top:10%;
+    height:300px;
+    display:none;
+}
+.forgotPassword{
+    color:#0f51ac;
+    margin-top:20px;
+    font-size:10px;
+}
+.remove-icon{
+    position:absolute;
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    color: gray;
+    cursor:pointer;
+}
+#contactScreen{
+    display:none;
+}

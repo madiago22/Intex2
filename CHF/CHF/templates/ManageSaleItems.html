@@ -1,0 +1,43 @@
+<%inherit file="manage.htm" />
+
+<%block name="listTitle">
+    Sale Items
+</%block>
+
+<%block name="list">
+    <tr>
+        <td>Hand-Crafted Breaches</td>
+    </tr>
+
+    <tr>
+        <td>Thomas Payne Mug</td>
+    </tr>
+
+    <tr>
+        <td>George Washington's Actual Incisors</td>
+    </tr>
+</%block>
+
+<%block name="form">
+    <form action="#" method="POST">
+        <table>
+            <tr>
+                <td> Item Name <input type="text"/></td><a  href="#"><img height="150"src="http://i3.cpcache.com/product/936970557/thomas_paine_historical_mugs.jpg?color=White&height=460&width=460&qv=90"/></a>
+
+            </tr>
+            <tr>
+                <td> Item Description <input type="text"/></td>
+            </tr>
+            <tr>
+                <td> Low Price <input type="text"/></td>
+            </tr>
+            <tr>
+                <td> High Price <input type="text"/></td>
+            </tr>
+        </table>
+            <div class="submitBtns">
+                <input class="btn btn-primary" value="Update" type="submit"/>
+                <input class="btn btn-danger" value="Archive" type="submit"style="margin: 10px;"/>
+            </div>
+    </form>
+</%block>

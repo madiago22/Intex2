@@ -1,0 +1,41 @@
+<%inherit file="manage.htm" />
+
+<%block name="listTitle">
+    Inventory
+</%block>
+
+<%block name="list">
+    <tr>
+        <td>Wooden Chair</td>
+    </tr>
+    <tr>
+        <td>Colonial Cloak</td>
+    </tr>
+    <tr>
+        <td>Musket</td>
+    </tr>
+</%block>
+
+<%block name="form">
+    <form action="#" method="POST">
+        <table>
+            <tr>
+                <td> Name <input type="text"/></td><td><a  href="#"><img height="150"src="http://i.walmartimages.com/i/mp/MP/10/00/77/71/MP10007771661_P255045_180X180.jpg"/></a></td>
+            </tr>
+            <tr>
+                <td> Value <input type="text"/></td><td> Standard Rental Price <input type="text"/></td>
+            </tr>
+            <tr>
+                <td> Description <input type="text"/></td><td> Item available for rent <input type="text"/> </td>
+            </tr>
+             <tr>
+                <td> Owner <input type="text"/></td>
+            </tr>
+
+        </table>
+        <div class="submitBtns">
+            <input class="btn btn-primary" value="Update" type="submit"/>
+            <input class="btn btn-danger" value="Archive" type="submit"style="margin: 10px;"/>
+        </div>
+    </form>
+</%block>

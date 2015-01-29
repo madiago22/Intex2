@@ -1,0 +1,44 @@
+<%inherit file="manage.htm" />
+
+<%block name="listTitle">
+    Users
+</%block>
+
+<%block name="list">
+    <tr>
+        <td>Annual Colonial Heritage Festival</td>
+    </tr>
+
+    <tr>
+        <td>Orem Founding Fathers Bash</td>
+    </tr>
+
+    <tr>
+        <td>Lil George Washington Fun Run</td>
+    </tr>
+</%block>
+
+<%block name="form">
+    <form action="#" method="POST">
+        <table>
+            <tr>
+                <td> Event Name <input type="text"/></td><td> Venue Address <input type="text"/></td>
+            </tr>
+            <tr>
+                <td> Event Start Date <input type="text"/></td><td> Venue City <input type="text"/></td>
+            </tr>
+            <tr>
+                <td> Event Map File Name <input type="text"/></td><td> Venue State <input type="text"/></td>
+            </tr>
+            <tr>
+                <td> Venue Name <input type="text"/></td><td> Venue Zip <input type="text"/></td>
+            </tr>
+        </table>
+            <div class="submitBtns">
+                <a class="resetLink"href="#">View Areas</a>
+                <a class="resetLink"href="#">View Sale Items</a>
+                <input class="btn btn-primary" value="Update" type="submit"/>
+                <input class="btn btn-danger" value="Archive" type="submit"style="margin: 10px;"/>
+            </div>
+    </form>
+</%block>

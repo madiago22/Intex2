@@ -1,0 +1,145 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+
+## set up a StaticRenderer object to enable the CSS/JS automatic inclusion magic.
+<%! from django_mako_plus.controller import static_files %>
+<%  static_renderer = static_files.StaticRenderer(self) %>
+
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <head>
+    
+    <title>Colonial Heritage</title>
+    
+    ## add any site-wide scripts or CSS here; for example, jquery:
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <link rel="icon" type = "image/x-icon" href="http://img.freeflagicons.com/thumb/star_icon/united_states_of_america/united_states_of_america_640.png">
+    ## render the css with the same name as this page
+    ${ static_renderer.get_template_css(request, context)  }
+  
+  </head>
+  <body>
+  <div id="topNav">
+
+  </div>
+    <div id="wrapper">
+
+        <table>
+<!-- BANNER -->
+        <tbody>
+        <tr id="banner">
+
+           <td colspan="2">
+               <h2 id="title">The Colonial Heritage Foundation</h2>
+               <div id="brBanner">
+
+                 <div class="input-group" id="searchBar">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Search for...">
+                </div>
+
+               <div id="login">
+                    <button class="btn btn-primary loginBtn"  >Login</button>
+                   <a href="#">Create an Account</a>
+               </div>
+
+             </div>
+           </td>
+
+        </tr>
+
+<!-- SIDEBAR -->
+
+        <tr id="middle">
+            <td id="sidebar">
+
+                 <div class="sidebar">
+                     <!-- OLD BOOTSTRAP SIDEBAR
+                    <ul class="nav nav-pills nav-stacked">
+                      <li  role="presentation" ><a href="/CHF/index">Home</a></li>
+                      <li  role="presentation"><a href="/CHF/about">About</a></li>
+                      <li role="presentation"><a href="/CHF/Contact">Contact</a></li>
+                      <li  role="presentation"><a href="/CHF/Terms">Terms</a></li>
+                    </ul>
+                    -->
+                   <ul class="navbar">
+                      <li id="home" class="screenNav" role="presentation" ><a href="#">Home</a></li>
+                      <li id="store" role="presentation"><a href="#">Store</a>
+                        <ul class="subNav">
+                            <li id="sales"><a href="#">Sales</a></li>
+                            <li id="rentals"><a href="#">Rentals</a></li>
+                        </ul>
+                      </li>
+                      <li id="contact" class="screenNav"role="presentation"><a href="#">Contact</a></li>
+                      <li id="terms" role="presentation"><a href="#">Terms</a></li>
+                   </ul>
+
+
+                </div>
+            </td>
+
+
+
+
+
+
+<!-- CONTENT -->
+
+           <td id="content">
+               <div id="homeScreen">
+                <%block name="content">
+
+                </%block>
+                </div>
+                <div id="contactScreen">
+                     <p>This is the contact Screen</p>
+                </div>
+           </td>
+
+
+
+       </tr>
+
+<!-- FOOTER -->
+        <tr  id="footer">
+           <td colspan="2">
+                <ul class="footerNav">
+                  <li id="aboutBtn" role="presentation"><a href="/CHF/about">About</a></li>
+                  <li id="contactBtn" role="presentation"><a href="/CHF/Contact">Contact</a></li>
+                  <li id="termsBtn" role="presentation"><a href="/CHF/Terms">Terms</a></li>
+               </ul>
+
+
+
+
+           </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+<!-- LOGIN FORM -->
+<div id="loginPage">
+    <span class="glyphicon glyphicon-remove remove-icon"></span>
+    <h2>Welcome</h2>
+   <div id="formSecion">
+    <form id="loginForm" action="#" method="POST">
+       <p>Username: <input type="text"/></p>
+        <p>Password:  &nbsp<input type="password"/></p>
+        <input type="submit" id="loginSubmit" class="btn btn-success"value="Login">
+    </form>
+       <a href="#" style="color:#0f51ac;margin-top:20px; font-size:10px;">Forgot Password?</a>
+    </div>
+</div>
+
+
+
+
+        ## render the JS with the same name as this page
+        ${ static_renderer.get_template_js(request, context)  }
+
+  </body>
+</html>

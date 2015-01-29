@@ -1,0 +1,77 @@
+h3{
+    margin-bottom:-15px;
+}
+textarea {
+    resize: none;
+}
+.manageTable{
+    height:100%;
+    width:100%;
+    min-height:500px;
+    min-width:700px;
+    margin:20px 10px;
+}
+.listCol{
+    height:100%;
+    width:28%;
+    min-width:150px;
+    background:radial-gradient(#c7c7c7,#5b5b5b );
+    border-radius:8px;
+    padding:10px;
+    text-align:center;
+    margin-top:-10px;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.list{
+    text-align:left;
+    background:white;
+    margin:23px 3px 1px;
+    height:95%;
+    border-radius:3px;
+    overflow-y:scroll;
+}
+
+.list tr{
+    border-bottom: 1px black solid;
+    padding:5px 5px;
+    cursor:pointer;
+}
+.list tr:hover{
+    background: #3a3a3a;
+    color:white;
+}
+
+.crudCol{
+    background: radial-gradient(white, #a9a9a9);
+    box-shadow: 5px 5px 5px #888888;
+    border-radius:8px;
+    margin-left:5px;
+    vertical-align: top;
+}
+.crudBox input[type="text"]{
+    display:block;
+}
+.spacer{
+    width:1%;
+}
+
+.submitBtns{
+    margin: 10px;
+    float: right;
+    padding-right: 20px;
+}
+
+.submitBtns .btn-success{
+    margin:10px;
+}
+.resetLink{
+    color: #AD1105;
+    text-decoration: underline;
+    margin: 15px;
+    font-size: 12px;
+}
+
+.pictureCell{
+    text-align:left;
+}

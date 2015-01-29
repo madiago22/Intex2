@@ -1,0 +1,58 @@
+<%inherit file="manage.htm" />
+
+    <%block name="listTitle">
+        Users
+    </%block>
+
+
+
+    <%block name="list">
+        <tr>
+            <td>Carter Hesterman</td>
+        </tr>
+         <tr>
+            <td>Sam Lucero</td>
+        </tr>
+         <tr>
+            <td>Trevor Jones</td>
+        </tr>
+         <tr>
+            <td>Parish Hansen</td>
+        </tr>
+    </%block>
+
+
+
+    <%block name="form">
+        <form action="#" method="POST">
+        <table>
+
+                <tr>
+					<td> First Name <input type="text"/></td>
+                    <td class="pictureCell" > <a  href="#"><img height="150"src="https://marriottschool.byu.edu/msmadmin/securefile/empphoto/?file=b0%2F5352.jpg"/></a></td>
+				</tr>
+				<tr>
+					<td> Last Name <input type="text"/></td><td> Address <input type="text"/></td>
+				</tr>
+				<tr>
+					<td> City <input type="text"/></td><td> State <input type="text"/></td>
+				</tr>
+				<tr>
+					<td> Zip <input type="text"/></td><td> Email <input type="text"/></td>
+				</tr>
+				<tr>
+					<td> Security Question <input type="text"/></td><td> Security Answer <input type="text"/></td>
+				</tr>
+				<tr>
+					<td> Client Type <input type="text"/></td><td> Phone Number <input type="text"/></td>
+				</tr>
+
+        </table>
+
+             <div class="submitBtns">
+                 <a class="resetLink"href="#">Reset Password</a>
+                <input class="btn btn-primary" value="Update" type="submit"/>
+                <input class="btn btn-danger" value="Archive" type="submit"style="margin: 10px;"/>
+            </div>
+        </form>
+    </%block>
