@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1422060578.202765
+_modified_time = 1422563293.896754
 _enable_loop = True
-_template_filename = 'C:\\Users\\Carter\\OneDrive\\Programming\\Python\\test_dmp\\CHF\\templates/ManageUsers.html'
+_template_filename = 'C:\\Dev\\Intex2\\CHF\\CHF\\templates/ManageUsers.html'
 _template_uri = 'ManageUsers.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -30,6 +30,7 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def listTitle():
             return render_listTitle(context._locals(__M_locals))
+        users = context.get('users', UNDEFINED)
         def form():
             return render_form(context._locals(__M_locals))
         def list():
@@ -82,10 +83,16 @@ def render_form(context,**pageargs):
 def render_list(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        users = context.get('users', UNDEFINED)
         def list():
             return render_list(context)
         __M_writer = context.writer()
-        __M_writer('\r\n        <tr>\r\n            <td>Carter Hesterman</td>\r\n        </tr>\r\n         <tr>\r\n            <td>Sam Lucero</td>\r\n        </tr>\r\n         <tr>\r\n            <td>Trevor Jones</td>\r\n        </tr>\r\n         <tr>\r\n            <td>Parish Hansen</td>\r\n        </tr>\r\n    ')
+        __M_writer('\r\n')
+        for user in users:
+            __M_writer('            <tr><td>User: ')
+            __M_writer(str(user.zip))
+            __M_writer('</td></tr>\r\n')
+        __M_writer('    ')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -93,6 +100,6 @@ def render_list(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "ascii", "filename": "C:\\Users\\Carter\\OneDrive\\Programming\\Python\\test_dmp\\CHF\\templates/ManageUsers.html", "line_map": {"48": 22, "64": 3, "82": 9, "27": 0, "70": 26, "38": 1, "88": 9, "58": 3, "43": 5, "76": 26, "94": 88}, "uri": "ManageUsers.html"}
+{"uri": "ManageUsers.html", "source_encoding": "ascii", "line_map": {"65": 3, "91": 10, "101": 95, "39": 1, "71": 17, "44": 5, "77": 17, "27": 0, "49": 13, "83": 9, "90": 9, "59": 3, "92": 11, "93": 11, "94": 11, "95": 13}, "filename": "C:\\Dev\\Intex2\\CHF\\CHF\\templates/ManageUsers.html"}
 __M_END_METADATA
 """

@@ -7,18 +7,9 @@
 
 
     <%block name="list">
-        <tr>
-            <td>Carter Hesterman</td>
-        </tr>
-         <tr>
-            <td>Sam Lucero</td>
-        </tr>
-         <tr>
-            <td>Trevor Jones</td>
-        </tr>
-         <tr>
-            <td>Parish Hansen</td>
-        </tr>
+        %for user in users:
+            <tr><td>User: ${user.zip}</td></tr>
+        %endfor
     </%block>
 
 
