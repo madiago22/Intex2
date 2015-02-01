@@ -24,6 +24,7 @@ delClient.delete()
 
 # MAKE USER 1
 user = User.objects.create_user('hesto2', 'hestermancarter@gmail.com', 'password1')
+user.first_name = 'Carter'
 user.last_name = 'Hesterman'
 
 carter = cMod.Client()
@@ -48,7 +49,7 @@ user.save()
 # MAKE USER 2
 user = User.objects.create_user('parishHansen6', 'parishhansen@gmail.com', 'password1')
 user.last_name = 'Hansen'
-
+user.first_name = 'Parish'
 parish.address = "111 s. 350 e."
 parish.zip = "84062"
 parish.city = "Provo"
@@ -65,7 +66,7 @@ user.save()
 # MAKE USER 3
 user = User.objects.create_user('tBone', 'trevorJones717@gmail.com', 'password1')
 user.last_name = 'Jones'
-
+user.first_name = 'Trevor'
 trevor.address = "500 s. 450 w."
 trevor.zip = "84062"
 trevor.city = "Provo"
@@ -82,8 +83,8 @@ user.save()
 
 # MAKE USER 4
 user = User.objects.create_user('lucey', 'samlucero6@gmail.com', 'password1')
-user.last_name = 'Jones'
-
+user.last_name = 'Lucero'
+user.first_name = 'Sam'
 sam.address = "200 s. 400 w."
 sam.zip = "84062"
 sam.city = "Provo"
