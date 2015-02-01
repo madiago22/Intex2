@@ -75,3 +75,9 @@ textarea {
 .pictureCell{
     text-align:left;
 }
+.listTable a{
+    color: inherit;
+    text-decoration: none;
+    height:100%;
+    width:100%;
+}
