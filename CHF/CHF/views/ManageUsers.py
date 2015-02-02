@@ -20,19 +20,17 @@ def process_request(request):
         # UPDATE USER IF FORM IS VALID
         form = UserEditForm(request.POST)
         Client = cMod.Client()
-        User = cMod.User()
 
         if form.is_valid():
-            User.first_name = form.cleaned_data['first_name']
-            User.last_name = form.cleaned_data['last_name']
-            User.email = form.cleaned_data['email']
-            User.username = form.cleaned_data['username']
-            User.save()
+            Client.first_name = form.cleaned_data['first_name']
+            Client.last_name = form.cleaned_data['last_name']
+            Client.email = form.cleaned_data['email']
+            Client.username = form.cleaned_data['username']
+            Client.save()
             Client.address = form.cleaned_data['address']
             Client.city = form.cleaned_data['city']
             Client.state = form.cleaned_data['state']
             Client.zip = form.cleaned_data['zip_code']
-            Client.user = User
             Client.save()
 
             return HttpResponseRedirect('/CHF/ManageUsers')
@@ -64,16 +62,16 @@ def edit(request):
 
         # UPDATE USER IF FORM IS VALID
         if form.is_valid():
-            User.user.first_name = form.cleaned_data['first_name']
+            User.first_name = form.cleaned_data['first_name']
             print("XXXXXXXXXXXXX" + form.cleaned_data['first_name'])
-            User.user.last_name = form.cleaned_data['last_name']
+            User.last_name = form.cleaned_data['last_name']
             User.address = form.cleaned_data['address']
             User.city = form.cleaned_data['city']
             User.state = form.cleaned_data['state']
             User.zip = form.cleaned_data['zip_code']
-            User.user.email = form.cleaned_data['email']
-            User.user.username = form.cleaned_data['username']
-            User.user.save()
+            User.email = form.cleaned_data['email']
+            User.username = form.cleaned_data['username']
+            User.save()
             User.save()
             print("Validated")
             # return HttpResponseRedirect('/CHF/ManageUsers/')
@@ -81,14 +79,14 @@ def edit(request):
     # Generate Form Data
     params['User'] = User
     params['listForm'] = UserEditForm(initial={
-        'first_name': User.user.first_name,
-        'last_name': User.user.last_name,
+        'first_name': User.first_name,
+        'last_name': User.last_name,
         'address': User.address,
         'city': User.city,
         'state': User.state,
         'zip_code': User.zip,
-        'username': User.user.username,
-        'email': User.user.email,
+        'username': User.username,
+        'email': User.email,
     })
 
     # Get all user objects to populate list bar
@@ -103,25 +101,25 @@ def create(request):
 
     User = cMod.Client()
 
-    User.user.first_name = ''
-    User.user.last_name = ''
+    User.first_name = ''
+    User.last_name = ''
     User.address = ''
     User.city = ''
     User.state = ''
     User.zip = ''
-    User.user.email = ''
-    User.user.username = ''
+    User.email = ''
+    User.username = ''
 
     params['users'] = cMod.Client.objects.all()
     params['listForm'] = UserEditForm(initial={
-        'first_name': User.user.first_name,
-        'last_name': User.user.last_name,
+        'first_name': User.first_name,
+        'last_name': User.last_name,
         'address': User.address,
         'city': User.city,
         'state': User.state,
         'zip_code': User.zip,
-        'username': User.user.username,
-        'email': User.user.email,
+        'username': User.username,
+        'email': User.email,
     })
     return templater.render_to_response(request, 'ManageUsers.html', params)
 
