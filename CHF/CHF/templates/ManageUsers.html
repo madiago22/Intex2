@@ -8,42 +8,23 @@
 
     <%block name="list">
         %for client in users:
-            <tr><td><a href="/CHF/ManageUsers/${client.id}">${client.user.first_name} ${client.user.last_name}</a> </td></tr>
+            <tr><td><a href="/CHF/ManageUsers.edit/${client.id}">${client.user.first_name} ${client.user.last_name}</a> </td></tr>
         %endfor
     </%block>
 
 
 
     <%block name="form">
-        <form action="#" method="POST">
+        <form method="POST">
         <table>
 
-                <tr>
-					<td> First Name <input type="text"/></td>
-                    <td class="pictureCell" > <a  href="#"><img height="150"src="https://marriottschool.byu.edu/msmadmin/securefile/empphoto/?file=b0%2F5352.jpg"/></a></td>
-				</tr>
-				<tr>
-					<td> Last Name <input type="text"/></td><td> Address <input type="text"/></td>
-				</tr>
-				<tr>
-					<td> City <input type="text"/></td><td> State <input type="text"/></td>
-				</tr>
-				<tr>
-					<td> Zip <input type="text"/></td><td> Email <input type="text"/></td>
-				</tr>
-				<tr>
-					<td> Security Question <input type="text"/></td><td> Security Answer <input type="text"/></td>
-				</tr>
-				<tr>
-					<td> Client Type <input type="text"/></td><td> Phone Number <input type="text"/></td>
-				</tr>
-
+                ${listForm}
         </table>
 
              <div class="submitBtns">
                  <a class="resetLink"href="#">Reset Password</a>
-                <input class="btn btn-primary" value="Update" type="submit"/>
-                <input class="btn btn-danger" value="Archive" type="submit"style="margin: 10px;"/>
+                <input type="submit"class="btn btn-primary" name="updateButton" value="Update" />
+                <input type="submit"class="btn btn-danger" name="archiveButton"value="Archive" style="margin: 10px;"/>
             </div>
         </form>
     </%block>
