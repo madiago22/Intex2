@@ -12,19 +12,30 @@
         %endfor
     </%block>
 
+    <%block name="bottomList">
+         <a class="btn createBtn" href="/CHF/ManageUsers">Create New</a>
+    </%block>
+
 
 
     <%block name="form">
         <form method="POST">
         <table>
-
                 ${listForm}
         </table>
 
              <div class="submitBtns">
-                 <a class="resetLink"href="#">Reset Password</a>
-                <input type="submit"class="btn btn-primary" name="updateButton" value="Update" />
-                <input type="submit"class="btn btn-danger" name="archiveButton"value="Archive" style="margin: 10px;"/>
+
+
+                 %if User =='' :
+                     <input type="submit"class="btn btn-success" name="createButton" value="Create"/>
+                 %else:
+                     <a class="resetLink"href="#">Reset Password</a>
+                     <input type="submit"class="btn btn-primary" name="updateButton" value="Update" />
+                     <input type="submit"class="btn btn-danger archiveBtn" name="archiveButton"value="Archive" style="margin: 10px;"/>
+                 %endif
+
+
             </div>
         </form>
     </%block>

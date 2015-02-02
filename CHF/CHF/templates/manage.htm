@@ -11,7 +11,11 @@
 
                          </%block>
                     </table>
-                    <button class="btn" vertical-align="bottom" style="margin:10px;border:1px black solid;">Create New</button>
+
+                        <%block name="bottomList">
+
+                         </%block>
+
                 <div class="input-group" id="searchBar">
                   <span class="input-group-btn">
                     <button class="btn btn-default" type="button">Go!</button>
@@ -22,7 +26,7 @@
            </td>
             <td class="spacer">&nbsp</td>
            <td class="crudCol">
-                <div class="crudBox">
+                <div class="crudBox ">
                     <%block name="form">
 
                     </%block>

@@ -14,6 +14,30 @@ def process_request(request):
 
     params['users'] = cMod.Client.objects.all()
     params['listForm'] = UserEditForm()
+    params['User'] = ''
+
+    if request.method == "POST":
+        # UPDATE USER IF FORM IS VALID
+        form = UserEditForm(request.POST)
+        Client = cMod.Client()
+        User = cMod.User()
+
+        if form.is_valid():
+            User.first_name = form.cleaned_data['first_name']
+            User.last_name = form.cleaned_data['last_name']
+            User.email = form.cleaned_data['email']
+            User.username = form.cleaned_data['username']
+            User.save()
+            Client.address = form.cleaned_data['address']
+            Client.city = form.cleaned_data['city']
+            Client.state = form.cleaned_data['state']
+            Client.zip = form.cleaned_data['zip_code']
+            Client.user = User
+            Client.save()
+
+            return HttpResponseRedirect('/CHF/ManageUsers')
+
+
 
     return templater.render_to_response(request, 'ManageUsers.html', params)
 

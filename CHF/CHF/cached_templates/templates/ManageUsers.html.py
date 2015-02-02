@@ -4,13 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1422839471.015497
+_modified_time = 1422854800.726911
 _enable_loop = True
 _template_filename = 'C:\\Dev\\Intex2\\CHF\\CHF\\templates/ManageUsers.html'
 _template_uri = 'ManageUsers.html'
 _source_encoding = 'ascii'
 import os, os.path, re
-_exports = ['form', 'listTitle', 'list']
+_exports = ['listTitle', 'form', 'bottomList', 'list']
 
 
 def _mako_get_namespace(context, name):
@@ -28,14 +28,17 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def form():
-            return render_form(context._locals(__M_locals))
-        listForm = context.get('listForm', UNDEFINED)
         def list():
             return render_list(context._locals(__M_locals))
+        users = context.get('users', UNDEFINED)
+        def bottomList():
+            return render_bottomList(context._locals(__M_locals))
         def listTitle():
             return render_listTitle(context._locals(__M_locals))
-        users = context.get('users', UNDEFINED)
+        User = context.get('User', UNDEFINED)
+        listForm = context.get('listForm', UNDEFINED)
+        def form():
+            return render_form(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\r\n\r\n    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'listTitle'):
@@ -47,26 +50,16 @@ def render_body(context,**pageargs):
             context['self'].list(**pageargs)
         
 
+        __M_writer('\r\n\r\n    ')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'bottomList'):
+            context['self'].bottomList(**pageargs)
+        
+
         __M_writer('\r\n\r\n\r\n\r\n    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'form'):
             context['self'].form(**pageargs)
         
 
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_form(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        listForm = context.get('listForm', UNDEFINED)
-        def form():
-            return render_form(context)
-        __M_writer = context.writer()
-        __M_writer('\r\n        <form method="POST">\r\n        <table>\r\n\r\n                ')
-        __M_writer(str(listForm))
-        __M_writer('\r\n        </table>\r\n\r\n             <div class="submitBtns">\r\n                 <a class="resetLink"href="#">Reset Password</a>\r\n                <input type="submit"class="btn btn-primary" name="updateButton" value="Update" />\r\n                <input type="submit"class="btn btn-danger" name="archiveButton"value="Archive" style="margin: 10px;"/>\r\n            </div>\r\n        </form>\r\n    ')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -84,12 +77,45 @@ def render_listTitle(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_form(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        User = context.get('User', UNDEFINED)
+        listForm = context.get('listForm', UNDEFINED)
+        def form():
+            return render_form(context)
+        __M_writer = context.writer()
+        __M_writer('\r\n        <form method="POST">\r\n        <table>\r\n                ')
+        __M_writer(str(listForm))
+        __M_writer('\r\n        </table>\r\n\r\n             <div class="submitBtns">\r\n\r\n\r\n')
+        if User =='' :
+            __M_writer('                     <input type="submit"class="btn btn-success" name="createButton" value="Create"/>\r\n')
+        else:
+            __M_writer('                     <a class="resetLink"href="#">Reset Password</a>\r\n                     <input type="submit"class="btn btn-primary" name="updateButton" value="Update" />\r\n                     <input type="submit"class="btn btn-danger archiveBtn" name="archiveButton"value="Archive" style="margin: 10px;"/>\r\n')
+        __M_writer('\r\n\r\n            </div>\r\n        </form>\r\n    ')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_bottomList(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def bottomList():
+            return render_bottomList(context)
+        __M_writer = context.writer()
+        __M_writer('\r\n         <a class="btn createBtn" href="/CHF/ManageUsers">Create New</a>\r\n    ')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_list(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        users = context.get('users', UNDEFINED)
         def list():
             return render_list(context)
-        users = context.get('users', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         for client in users:
@@ -108,6 +134,6 @@ def render_list(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"67": 17, "68": 21, "69": 21, "75": 3, "109": 103, "81": 3, "87": 9, "27": 0, "94": 9, "95": 10, "96": 11, "97": 11, "98": 11, "99": 11, "100": 11, "101": 11, "102": 11, "103": 13, "40": 1, "45": 5, "50": 13, "60": 17}, "uri": "ManageUsers.html", "filename": "C:\\Dev\\Intex2\\CHF\\CHF\\templates/ManageUsers.html", "source_encoding": "ascii"}
+{"line_map": {"128": 11, "129": 13, "107": 15, "68": 3, "135": 129, "74": 3, "80": 21, "122": 11, "88": 21, "89": 24, "90": 24, "91": 30, "92": 31, "93": 32, "94": 33, "95": 37, "27": 0, "101": 15, "43": 1, "48": 5, "113": 9, "53": 13, "120": 9, "121": 10, "58": 17, "123": 11, "124": 11, "125": 11, "126": 11, "127": 11}, "uri": "ManageUsers.html", "filename": "C:\\Dev\\Intex2\\CHF\\CHF\\templates/ManageUsers.html", "source_encoding": "ascii"}
 __M_END_METADATA
 """

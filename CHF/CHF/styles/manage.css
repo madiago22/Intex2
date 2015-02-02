@@ -29,7 +29,7 @@ textarea {
     margin:23px 3px 1px;
     height:95%;
     border-radius:3px;
-    overflow-y:scroll;
+    position:relative;
 }
 
 .list tr{
@@ -80,4 +80,18 @@ textarea {
     text-decoration: none;
     height:100%;
     width:100%;
+    overflow-y:scroll;
+}
+.createBtn{
+
+    border-radius: 0px;
+    position: absolute;
+    padding: 12px;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(gray,black);
+    border: none;
+}
+.createBtn:hover{
+    color:white;
 }
