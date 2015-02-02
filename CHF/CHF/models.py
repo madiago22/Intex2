@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 # USER MANAGEMENT CLASSES
 # Change
 
@@ -13,7 +13,7 @@ class Photo(models.Model):
 # add upload/download methods to each photo class
 
 
-class Client(models.Model):
+class Client(AbstractUser):
     # REMOVED ALL ATTRIBUTES FOUND IN DJANGO USER CLASS AS WELL AS CLIENT TYPE
     address = models.TextField(max_length=35)
     city = models.TextField(max_length=25)
@@ -23,7 +23,7 @@ class Client(models.Model):
     securityAnswer = models.TextField(max_length=25)
     phoneNumber = models.TextField(max_length=25)
     photo = models.ForeignKey(Photo, blank=True, null=True)
-    user = models.OneToOneField(User)
+
 # add validate data method?
 
 

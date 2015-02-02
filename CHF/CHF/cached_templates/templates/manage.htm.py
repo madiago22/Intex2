@@ -4,13 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1422853168.949913
+_modified_time = 1422890598.072372
 _enable_loop = True
 _template_filename = 'C:\\Dev\\Intex2\\CHF\\CHF\\templates/manage.htm'
 _template_uri = 'manage.htm'
 _source_encoding = 'ascii'
 import os, os.path, re
-_exports = ['bottomList', 'list', 'form', 'content', 'listTitle']
+_exports = ['form', 'content', 'bottomList', 'list', 'listTitle']
 
 
 def _mako_get_namespace(context, name):
@@ -30,12 +30,12 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def bottomList():
             return render_bottomList(context._locals(__M_locals))
-        def list():
-            return render_list(context._locals(__M_locals))
-        def form():
-            return render_form(context._locals(__M_locals))
         def content():
             return render_content(context._locals(__M_locals))
+        def form():
+            return render_form(context._locals(__M_locals))
+        def list():
+            return render_list(context._locals(__M_locals))
         def listTitle():
             return render_listTitle(context._locals(__M_locals))
         __M_writer = context.writer()
@@ -44,30 +44,6 @@ def render_body(context,**pageargs):
             context['self'].content(**pageargs)
         
 
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_bottomList(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def bottomList():
-            return render_bottomList(context)
-        __M_writer = context.writer()
-        __M_writer('\r\n\r\n                         ')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_list(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def list():
-            return render_list(context)
-        __M_writer = context.writer()
-        __M_writer('\r\n\r\n                         ')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -90,12 +66,12 @@ def render_content(context,**pageargs):
     try:
         def bottomList():
             return render_bottomList(context)
-        def list():
-            return render_list(context)
-        def form():
-            return render_form(context)
         def content():
             return render_content(context)
+        def form():
+            return render_form(context)
+        def list():
+            return render_list(context)
         def listTitle():
             return render_listTitle(context)
         __M_writer = context.writer()
@@ -125,6 +101,30 @@ def render_content(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_bottomList(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def bottomList():
+            return render_bottomList(context)
+        __M_writer = context.writer()
+        __M_writer('\r\n\r\n                         ')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_list(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def list():
+            return render_list(context)
+        __M_writer = context.writer()
+        __M_writer('\r\n\r\n                         ')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_listTitle(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -138,6 +138,6 @@ def render_listTitle(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"64": 10, "128": 7, "139": 128, "70": 10, "102": 3, "42": 1, "107": 7, "76": 30, "112": 12, "82": 30, "52": 15, "117": 17, "88": 3, "58": 15, "27": 0, "122": 32}, "uri": "manage.htm", "filename": "C:\\Dev\\Intex2\\CHF\\CHF\\templates/manage.htm", "source_encoding": "ascii"}
+{"source_encoding": "ascii", "line_map": {"64": 3, "122": 10, "98": 32, "128": 7, "104": 15, "42": 1, "139": 128, "78": 3, "83": 7, "52": 30, "110": 15, "88": 12, "116": 10, "58": 30, "27": 0, "93": 17}, "filename": "C:\\Dev\\Intex2\\CHF\\CHF\\templates/manage.htm", "uri": "manage.htm"}
 __M_END_METADATA
 """

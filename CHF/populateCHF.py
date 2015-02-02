@@ -1,5 +1,4 @@
 __author__ = 'Carter'
-__author__ = 'Carter'
 
 #!/usr/bin/env python3
 import os
@@ -12,90 +11,71 @@ import django
 django.setup()
 
 import CHF.models as cMod
-from django.contrib.auth.models import User
+
 
 # INITIALIZATION SCRIPT FOR CHF DATABASE
-
-delUser = User.objects.all()
-delUser.delete()
-delClient = cMod.Client.objects.all()
-delClient.delete()
-
-
 # MAKE USER 1
-user = User.objects.create_user('hesto2', 'hestermancarter@gmail.com', 'password1')
-user.first_name = 'Carter'
-user.last_name = 'Hesterman'
 
-carter = cMod.Client()
-parish = cMod.Client()
-trevor = cMod.Client()
-sam = cMod.Client()
+cMod.Client.objects.all().delete()
 
-carter.address = "3289 Mohawk Circle"
-carter.zip = "84064"
-carter.city = "Provo"
-carter.state = "UT"
-carter.securityQuestion = "Mother's maiden name?"
-carter.securityAnswer = "Jane"
-carter.phoneNumber = "8018341490"
-carter.user = user
-# carter.photo = "/CHF/media/carterPhoto.JPG"
-
-carter.save()
+user = cMod.Client()
+user.last_name = "Hesterman"
+user.password = "password1"
+user.email ="hestermancarer@gmail.com"
+user.first_name = "Carter"
+user.address = "3289 Mohawk Circle"
+user.zip = "84064"
+user.city = "Provo"
+user.state = "UT"
+user.securityQuestion = "Mother's maiden name?"
+user.securityAnswer = "Jane"
+user.phoneNumber = "8018341490"
+user.username = "hesto2"
 user.save()
 
-
-# MAKE USER 2
-user = User.objects.create_user('parishHansen6', 'parishhansen@gmail.com', 'password1')
-user.last_name = 'Hansen'
-user.first_name = 'Parish'
-parish.address = "111 s. 350 e."
-parish.zip = "84062"
-parish.city = "Provo"
-parish.state = "UT"
-parish.securityQuestion = "Father's maiden name?"
-parish.securityAnswer = "Skywalker"
-parish.phoneNumber = "5722708945"
-parish.user = user
-# parish.photo = "/CHF/media/carterPhoto.JPG"
-
-parish.save()
+user = cMod.Client()
+user.last_name = "Lucero"
+user.password = "password1"
+user.email ="samlucero@gmail.com"
+user.first_name = "Sam"
+user.address = "151 s 100 e Starling way"
+user.zip = "84064"
+user.city = "Provo"
+user.state = "UT"
+user.securityQuestion = "Mother's maiden name?"
+user.securityAnswer = "Gomez"
+user.phoneNumber = "2708805987"
+user.username = "lucey"
 user.save()
 
-# MAKE USER 3
-user = User.objects.create_user('tBone', 'trevorJones717@gmail.com', 'password1')
-user.last_name = 'Jones'
-user.first_name = 'Trevor'
-trevor.address = "500 s. 450 w."
-trevor.zip = "84062"
-trevor.city = "Provo"
-trevor.state = "UT"
-trevor.securityQuestion = "Favorite Color?"
-trevor.securityAnswer = "Purple"
-trevor.phoneNumber = "3584655001"
-trevor.user = user
-# trevor.photo = "/CHF/media/carterPhoto.JPG"
-
-trevor.save()
+user = cMod.Client()
+user.last_name = "Jones"
+user.password = "password1"
+user.email ="trevoerjones717@gmail.com"
+user.first_name = "Trevor"
+user.address = "3 Silicon Way"
+user.zip = "90080"
+user.city = "Simi Valley"
+user.state = "CA"
+user.securityQuestion = "Mother's maiden name?"
+user.securityAnswer = "Ciobatta"
+user.phoneNumber = "4658054567"
+user.username = "tBone"
 user.save()
 
-
-# MAKE USER 4
-user = User.objects.create_user('lucey', 'samlucero6@gmail.com', 'password1')
-user.last_name = 'Lucero'
-user.first_name = 'Sam'
-sam.address = "200 s. 400 w."
-sam.zip = "84062"
-sam.city = "Provo"
-sam.state = "UT"
-sam.securityQuestion = "Favorite Color?"
-sam.securityAnswer = "Mauve"
-sam.phoneNumber = "46540025462"
-sam.user = user
-# sam.photo = "/CHF/media/carterPhoto.JPG"
-
-sam.save()
+user = cMod.Client()
+user.last_name = "Hansen"
+user.password = "password1"
+user.email ="parishhansen@gmail.com"
+user.first_name = "Parish"
+user.address = "500 s Provo Way"
+user.zip = "84064"
+user.city = "Provo"
+user.state = "UT"
+user.securityQuestion = "Mother's maiden name?"
+user.securityAnswer = "Smith"
+user.phoneNumber = "6458245468"
+user.username = "PAPA"
 user.save()
 
 print("Users Initialized")
